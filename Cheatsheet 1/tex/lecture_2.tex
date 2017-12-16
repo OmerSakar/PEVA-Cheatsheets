@@ -1,0 +1,29 @@
+\section{Lecture 2 DTMCs}
+
+\textbf{Limiting distribution}: $\underline{v}(P - I) = \underline{0}$ and $\sum_{j} v_{j} = 1$\\
+\begin{align*}
+(P-I) = \begin{pmatrix}
+  -0.1 & 0.1  \\
+  0.4 & -0.4 \\
+ \end{pmatrix} \implies 
+	\begin{split} 	
+ 	-0.1v_{0} + 0.4v_{1} = 0\\ 
+	0.1v_{0} - 0.4v_{1} = 0
+	\end{split}
+\end{align*}
+\newline
+\hrule
+\settowidth{\MyLen}{\texttt{positive recuurent.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!recurrent!				&	A state is recurrent if we return to it with probability 1.\\
+\verb!transient!				&	A state is transient (or nonrecurrent) if there is a positive probability of not returning to this state.\\
+\verb!positive recurrent!		&	A state is positive recurrent (or recurrent non-null) if its mean recurrence time is finite. \\
+\verb!null recurrent!			&	A state is null recurrent if its mean recurrence time is infinite. \\
+\verb!absorbing!				&	A state i is absorbing if and only if pi,i = 1. \\
+\verb!period!					& The period $d_{i}$ of state i is the greatest common divisor of all the values n for which $p_{i,i}(n) > 0$.\\
+\verb!irreducible!				& A DTMC is called irreducible if every state can be reached from every other state in a finite number of steps. In an irreducible DTMC, all states have the same period.\\
+\verb!Markov property!			& Future evolution (next state) only depends on the current state, not on the past history!\\
+\verb!time-homogeneous!			& DTMC’s are time-homogeneous: the matrix \textbf{P} does not change over time.\\
+\end{tabular}
+\newline
+\hrule

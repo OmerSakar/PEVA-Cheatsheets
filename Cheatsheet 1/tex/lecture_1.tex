@@ -1,0 +1,18 @@
+\section{Lecture 1 General}
+
+\textbf{Amdahl's law}: $T(n) = (1- \alpha) \cdot t + \alpha \cdot \frac{t}{n}$, $lim_{n \rightarrow \infty}\ S(n) = \frac{1}{1 - \alpha}$\\
+\textbf{Kendall notation for queues}: $arrivals\ |\ service\ |\ servers\ |\ buffersize\ |\ population\ |\ scheduling$
+\newline
+\hrule
+\newlength{\MyLen}
+\settowidth{\MyLen}{\texttt{buffer size.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!arrival!			&	Distribution of interarrival time\\
+\verb!service!			&	Distribution of service time\\
+\verb!servers!			&	Number of servers. \\
+\verb!buffer size!		&	Maximum number of customers in queueing station (including servers). \\
+\verb!population!		&	Number of customers in and outside the queueing station. \\
+\verb!scheduling!		&	Employed scheduling strategy. \\
+\end{tabular}
+\newline
+\hrule
