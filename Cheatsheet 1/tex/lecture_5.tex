@@ -1,1 +1,13 @@
-\section{Lecture 5}
+\section{Lecture 5 Simulation}
+Monte Carlo method: $X_{i}$ and $Y_{i}$ random variables, uniform on [0,1] = random points in a unit square. Define $J_{i}$ if $Y_{i} \leq X_{i}$ then 1 else 0. Estimate $\widetilde{A} = \frac{1}{N} \sum_{i=1}^{N} J_{i} \approx \int_{0}^{1} x^2 dx$.
+
+The estimate $\widetilde{a}$ is a realization of the random variable $\widetilde{A}$. Random variable $\widetilde{A}$ is called an estimator of a. $\widetilde{A}$ should be unbiased, so $E[\widetilde{A}] = a$ and $\widetilde{A}$ shoudl be consistent, so $lim_{n\rightarrow\infty} var[\widetilde{A}] = 0$\\
+
+Different ways to classify simulation methods: \textbf{1.} Stochastic vs. deterministic: usage of random numbers, \textbf{2.} Discrete-event vs. continuous-event, \textbf{3.} Steady-state vs. transient and \textbf{4.} Time-based vs. event-based.
+
+\textbf{Time-based simulation:} Also called synchronous simulation, Time proceeds in steps of size $\Delta t$, In each iteration all events are processed that happen in the interval $[t,t + \Delta t]$, System state is changed accordingly, Assumption: ordering of events in an interval is not important, events are independent and $\Delta t$ has to be small.
+
+\textbf{Event-based simulation:} Also called asynchronous simulation, Time 'jumps' from event to event, In each iteration: determine the next event, set simulation time to its occurrence time, process the event and generate new events.
+
+\textbf{User-oriented measure:} Estimate of average response time from n jobs = $\widetilde{r} = \frac{1}{n} \sum_{i=1}^{n}(t_{i}^{(d)} - t_{i}^{(a)})$, with $t_{i}^{(a)}$ arrival time of ith job and $t_{i}^{(d)}$ departure time of ith job.
+

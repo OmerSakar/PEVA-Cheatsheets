@@ -1,4 +1,4 @@
-\section{Lecture 4}
+\section{Lecture 4 M$|$M$|$1 queues}
 \hrule
 \settowidth{\MyLen}{\texttt{positive recuurent.}}
 \begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
@@ -39,7 +39,7 @@ Little's Law helps to go from \textbf{system-oriented} measures tot \textbf{user
 \settowidth{\MyLen}{\texttt{positive recuurent.}}
 \begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
 \verb!Little's law!				&	$E[N] = X \cdot E[R]$, with $X=\mu$ if overloaded\\
-\verb!Loss prob p_{m}!		&	probability that an arriving job has to leave because the bu↵er is full (PASTA)\\
+\verb!Loss prob p_{m}!		&	probability that an arriving job has to leave because the buffer is full (PASTA)\\
 \verb!Throughput!			&	$X = \lambda \cdot (1-p_{m}) = \mu \cdot (1- p_{0})$, number of jobs served per time unit\\
 \verb!Utilization!			&	$X \cdot E[S] = 1 - p_{0}$\\
 \end{tabular}
@@ -50,16 +50,6 @@ Little's Law helps to go from \textbf{system-oriented} measures tot \textbf{user
 \settowidth{\MyLen}{\texttt{Expected busy servers.}}
 \begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
 \verb!Utilization!			&	For each individual server $\rho = \frac{\lambda}{m \cdot \mu}$\\
-\verb!Expected busy servers!			&	For each individual server $m \cdot \rho = \frac{\lambda}{\mu}$\\
+\verb!Expected busy servers!			&	Number of busy servers $m \cdot \rho = \frac{\lambda}{\mu}$\\
 \end{tabular}
 \hrule
-
-
-
-
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
