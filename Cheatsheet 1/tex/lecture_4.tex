@@ -1,1 +1,65 @@
 \section{Lecture 4}
+\hrule
+\settowidth{\MyLen}{\texttt{positive recuurent.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!FCFS!				&	First come, first served.\\
+\verb!RR!				&	Round robin.\\
+\verb!PS!				&	Processor sharing.\\
+\verb!SJN!				&	Shortest job next.\\
+\verb!LCFS!				&	Last come, first served.\\
+\verb!IS!				&	Infinite server.\\
+\verb!PRIO!				&	priority scheduling.\\
+\verb!PASTA!			&	Poisson Arrivals See Time Averages.\\
+\end{tabular}
+\hrule
+
+What is the expected number of jobs in the system in steady
+state? 1. compute steady-state probabilities using GBEs or something else, 2. use steady-state probabilities to compute expectation. 
+
+$E[N] = \sum^{n}_{i=0} i \cdot p_{i}$.\\
+If server is infinite (like with a M$|$M$|$1 queue), the expected number of customer:\\
+In system, $E[N] = \frac{\rho}{1-\rho}$.\\
+In queue, $E[N_{q}] = \frac{\rho^2}{1-\rho}$.\\
+In server, $E[N_{s}] = \rho$.\\
+
+Little's Law helps to go from \textbf{system-oriented} measures tot \textbf{user-oriented} measures. 
+
+\textbf{Little's law for:}
+\hrule
+\settowidth{\MyLen}{\texttt{positive recuurent.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Full station!				&	$E[N] = \lambda \cdot E[R]$, with $E[R]$ as the expected response time, average time each customer spends in system.\\
+\verb!Queue only!				&	$E[N_{q}] = \lambda \cdot E[W]$, with $E[W]$ as average waiting time.\\
+\verb!Server only!				&	$\rho = \lambda \cdot E[S]$, with $E[S]$ as  average service time.\\
+\end{tabular}
+\hrule
+
+\textbf{For finite stations with one server:}
+\hrule
+\settowidth{\MyLen}{\texttt{positive recuurent.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Little's law!				&	$E[N] = X \cdot E[R]$, with $X=\mu$ if overloaded\\
+\verb!Loss prob p_{m}!		&	probability that an arriving job has to leave because the bu↵er is full (PASTA)\\
+\verb!Throughput!			&	$X = \lambda \cdot (1-p_{m}) = \mu \cdot (1- p_{0})$, number of jobs served per time unit\\
+\verb!Utilization!			&	$X \cdot E[S] = 1 - p_{0}$\\
+\end{tabular}
+\hrule
+
+\textbf{For infinite stations with m server:}
+\hrule
+\settowidth{\MyLen}{\texttt{Expected busy servers.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Utilization!			&	For each individual server $\rho = \frac{\lambda}{m \cdot \mu}$\\
+\verb!Expected busy servers!			&	For each individual server $m \cdot \rho = \frac{\lambda}{\mu}$\\
+\end{tabular}
+\hrule
+
+
+
+
+\blindtext
+\blindtext
+\blindtext
+\blindtext
+\blindtext
+\blindtext
