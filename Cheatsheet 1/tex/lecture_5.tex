@@ -1,7 +1,7 @@
 \section{Lecture 5 Simulation}
-Monte Carlo method: $X_{i}$ and $Y_{i}$ random variables, uniform on [0,1] = random points in a unit square. Define $J_{i}$ if $Y_{i} \leq X_{i}$ then 1 else 0. Estimate $\widetilde{A} = \frac{1}{N} \sum_{i=1}^{N} J_{i} \approx \int_{0}^{1} x^2 dx$.
+Monte Carlo method: $X_{i}$ and $Y_{i}$ random variables, uniform on [0,1] = random points in a unit square. Define $J_{i}$ if $Y_{i} \leq X_{i}^{2}$ then 1 else 0. Estimate $\widetilde{A} = \frac{1}{N} \sum_{i=1}^{N} J_{i} \approx \int_{0}^{1} x^2 dx$.
 
-The estimate $\widetilde{a}$ is a realization of the random variable $\widetilde{A}$. Random variable $\widetilde{A}$ is called an estimator of a. $\widetilde{A}$ should be unbiased, so $E[\widetilde{A}] = a$ and $\widetilde{A}$ shoudl be consistent, so $lim_{n\rightarrow\infty} var[\widetilde{A}] = 0$\\
+The estimate $\widetilde{a}$ is a realization of the random variable $\widetilde{A}$. Random variable $\widetilde{A}$ is called an estimator of a. $\widetilde{A}$ should be unbiased, so $E[\widetilde{A}] = a$ and $\widetilde{A}$ should be consistent, so $lim_{n\rightarrow\infty} var[\widetilde{A}] = 0$\\
 
 Different ways to classify simulation methods: \textbf{1.} Stochastic vs. deterministic: usage of random numbers, \textbf{2.} Discrete-event vs. continuous-event, \textbf{3.} Steady-state vs. transient and \textbf{4.} Time-based vs. event-based.
 
@@ -10,4 +10,23 @@ Different ways to classify simulation methods: \textbf{1.} Stochastic vs. determ
 \textbf{Event-based simulation:} Also called asynchronous simulation, Time 'jumps' from event to event, In each iteration: determine the next event, set simulation time to its occurrence time, process the event and generate new events.
 
 \textbf{User-oriented measure:} Estimate of average response time from n jobs = $\widetilde{r} = \frac{1}{n} \sum_{i=1}^{n}(t_{i}^{(d)} - t_{i}^{(a)})$, with $t_{i}^{(a)}$ arrival time of ith job and $t_{i}^{(d)}$ departure time of ith job.
+
+\textbf{Mean values:} We want to determine an approximation of $E[X]$ of a random variable $X$ (for example, response time). Simulation is used to generate $n$ samples, each of which is a
+realization of a random variable $X_i$. All $X_i$ have the same distribution as $X$. The $X_i$ are (should be) independent of each other. Random variable $\widetilde{X}$ is an estimator of $E[X]$: $\widetilde{X} = \frac{1}{n} \cdot \sum^{n}_{i=1} X_{i}$ and hopefully $\widetilde{X}$ is unbiased ($E[\widetilde{X}] = E[X]$) and consistent ($\lim_{n \rightarrow \infty} var[\widetilde{X}] = 0$).
+
+\textbf{Confidence intervals:} The $X_i$ are (hopefully) independent and identically distributed, with mean $E[X]$ and some (unknown) variance $\sigma^{2} = var[X]$.
+Central limit theorem says: $\widetilde{X}$ is approximately normal distributed with mean $E[N]$ and variance $\sigma^{2} / n$ since it is the sum of independant vairables $X_{i}$. $\sigma^2$ is not known either, but can be estimated by: $\widetilde{\sigma}^{2} = \frac{n}{n-1} \cdot (\frac{\sum_{i=1}^{n} X_{i}^{2}}{n} - \widetilde{X}^{2})$ which is “the mean of the squares minus square of the mean”. And $var[\widetilde{X}] = \frac{\sigma^{2}}{n} \approx \frac{\widetilde{\sigma}^{2}}{n}$.
+
+\hrule
+\settowidth{\MyLen}{\texttt{Random interval.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Std deviations!	& Probability that a normally-distributed random variable deviates more than 1.645 standard deviations from the mean, is 10\%.\\
+$\widetilde{X}$			&	$\in [E[X] - 1.645 \cdot \frac{\sigma}{\sqrt{n}}, E[X] + 1.645 \cdot \frac{\sigma}{\sqrt{n}}]$\\
+\verb!Random interval!			&	$[\widetilde{X} - 1.645 \cdot \frac{\widetilde{\sigma}}{\sqrt{n}}, \widetilde{X} + 1.645 \cdot \frac{\widetilde{\sigma}}{\sqrt{n}}]$ which with (approx.) 90\% probability contains the true mean E[X]. This is called the 90\% confidence interval.\\
+\verb!68%!			&	Use $\sigma$ instead of 1.645\\
+\verb!95%!			&	Use $2 \cdot \sigma$instead of 1.645\\
+\verb!99%!			&	Use $3 \cdot \sigma$instead of 1.645\\
+\end{tabular}
+\hrule
+
 
