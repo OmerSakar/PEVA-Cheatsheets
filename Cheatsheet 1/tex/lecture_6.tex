@@ -1,5 +1,5 @@
 \section{Lecture 6 M$|$G$|$1 queues}
-%TODO add variance on slide 2
+$\sigma^{2} = var[X] = E[X^{2}] - E[X]^{2}$ and normalized variance w.r.t. mean value$C_{X}^{2} = \frac{var[X]}{E[X]^{2}}$
 
 \hrule
 \settowidth{\MyLen}{\texttt{Deterministic.}}
@@ -9,7 +9,6 @@
 \verb!Exponential!	& $X_{Exp} \sim Exp(\lambda)$, $E[X_{Exp}] = 1/\lambda$, $E[X_{Exp}^{2}] = 2/\lambda^{2}$, $var[X_{Exp}] = 1/\lambda^{2}$ and $C_{X_{Exp}}^{2} = 1$\\
 \end{tabular}
 \hrule
-%TODO continue
 
-\blindtext
-\blindtext
+\textbf{Expected residual time: $E[R]$ of an arriving job:}
+\textbf{1.} $E[R_{1}] = \rho \cdot \frac{E[S^{2}]}{2E[S]}$ expected residual service time of the job in service (if any), \textbf{2.} $E[R_{2}] = E[N_{q}] \cdot E[S]$ expected service time of the job(s) already waiting and \textbf{3.} $E[R_{3}] = E[S]$ expected service time of the arriving job itself. Then $E[R] = E[S] + \frac{\lambda \cdot E[S^{2}]}{2(1-\rho)}$, $E[N] = \lambda E[R] = \lambda E[S] + \frac{\lambda^{2} E[S^{2}]}{2(1-\rho)}$, $E[W] = \frac{\lambda E[S^{2}]}{2(1-\rho)}$ and $E[N_ {q}] = \frac{\lambda^{2} E[S^{2}]}{2(1-\rho)}$
