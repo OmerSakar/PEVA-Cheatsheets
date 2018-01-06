@@ -1,15 +1,64 @@
-\section{Lecture 6}
 
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
-\blindtext
+\section{Lecture 6}
+Comparison of different queues
+\hrule
+\newlength{\MyLen}
+\settowidth{\MyLen}{\texttt{MMMM1safdasdf.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!M|M|1!	&  $E[W_M] = \frac{\rho E[S]}{1-\rho}$\\
+\verb!M|D|1!	&  $E[W_D] = \frac{1}{2}E[W_M] $\\
+\verb!M|E_2|1!	&  $E[W_{E_2}] = \frac{3}{4} E[W_M] $\\
+\end{tabular}
+\hrule
+
+\textbf{Batch arrivals:} $E[H] = \sum_{k=0}^{\infty} k \cdot h_{k}$, second
+
+\hrule
+\settowidth{\MyLen}{\texttt{2nd factorial moment.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Arrival!	&  Poisson arrival process with rate $\lambda$.\\
+\verb!Packets!	&  An arrival consists of H mini-packets.\\
+\verb!E[H]!	&  $E[H] = \sum_{k=0}^{\infty} k \cdot h_{k}$\\
+\verb!2nd factorial moment!	&  $E[H^{2}] - E[H] = E[H^{2} - H] = E[H(H-1)]= \sum_{k=0}^{\infty} k \cdot (k-1) \cdot h_{k}$\\
+\verb!Service time!	&  service time distribution for a mini-packet with $E[S]$ and $E[S^{2}]$\\
+\verb!Utilisation!	&  $\rho = \lambda E[H] \cdot E[S]$\\
+\verb!E[W]!	&  $E[W] = \frac{\lambda E[H] \cdot E[S^2]}{2(1-\rho)} + \frac{E[H(H-1)]E[S]}{2E[H](1-\rho)}$\\
+\verb!E[W_unsplit]!	&  $E[W_{unsplit}] = \frac{\lambda E[S^{2}]}{2(1-\rho)} = \frac{\lambda 2 \cdot E[S]^{2}}{2(1-\rho)}$\\
+\end{tabular}
+\hrule
+
+\textbf{Priority PRIO:} With PRIO every class has an $\lambda_{r}$ and $E[S_{r}]$. 
+\hrule
+\settowidth{\MyLen}{\texttt{remaining service time.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Non-Preemtive! &  a job in service is always first finished before a new job is put into service\\
+\verb!remaining service time! & $E[T_P] = \frac{1}{2}\sum_{k=1}^{P} \lambda_k E[S^{2}_{k}]$\\
+\verb!Cobham! & $E[W_r] = \frac{E[T_P]}{(1-\sigma_r)(1-\sigma_{r-1})}$, with $\sigma_0 = 0$\\
+\verb!Sigma r! & $\sigma_r = \sum_{k=1}^{r} \rho_k$\\
+\verb!Conservation law! & $\rho E[W] = \sum_{r=1}^{P} \rho_r E[W_r]$\\
+\end{tabular}
+\hrule
+\settowidth{\MyLen}{\texttt{remaining service time.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Preemtive! & a job in service is stopped being served as soon as a higher priority job arrives.\\
+\verb!Scheduling! & preemtive resume (PRS), preemtive repeat identical (PRI) and preemtive repeat different (PRD).\\
+\verb!For class 1 job! & $E[W_1] = \frac{\lambda_1 E[S^{2}_1]}{2(1-\sigma_r)}$.\\
+\verb!E[W_r]! & $E[W_r] = \frac{\sigma_{r-1} E[S_r]}{1-\sigma_{r-1}} + \frac{E[T_r]}{(1-\sigma_{r})(1-\sigma_{r-1})}$\\
+\end{tabular}
+\hrule
+
+\textbf{Shorest Job next (SJN):}
+\hrule
+\settowidth{\MyLen}{\texttt{remaining service time.}}
+\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+\verb!Utilisation! & $\rho_t = \lambda_t t = \lambda s f_s(s)dt \cdot t$\\
+\verb!Cumulative utilisation! & $\beta_t = \int_0^t \lambda s f_s(s) ds$\\
+\verb!Total utilisation! & $\beta_\infty = \lambda \int_0^\infty s f_s(s) ds = \lambda E[S] = \rho$ \\
+\verb!Remaining service time! & $E[T_\infty] = \frac{1}{2} \lambda E[S^2]$ \\
+\verb!Waiting time! & $E[W_t] = \frac{\lambda E[S^2]}{2(1-\beta_t)^2}$ \\
+\verb!Waiting time! & $E[W_{SJN}] = \int^\infty_0 E[W_t] f_s(t) dt$ \\
+\end{tabular}
+\hrule
+\textbf{Round Robin (RR):} an arriving job needs an integer number of service “rounds”, each of constant length $Q$ (quantum).  The number of quanta $G$ an arriving job needs follows a (discrete) geometric distribution. For an arriving job consisting of 1 quantum only, the mean response time is simple: $E[R_{G=1}] = \rho \frac{Q}{2} + E[N_q]Q + Q$
+
+\textbf{RR to the limit (processor Sharing (PS)) $Q \rightarrow 0$:} with response time $E[R_{PS}] = \frac{t}{1-\rho}$, stretch factor $(1-\rho)^{-1}$ and virtual average waiting time for jobs of length t $E[W_{PS}(t)] = E[R_{PS}] -t = \frac{\rho t}{1-\rho}$. Unconditional virtual average waiting time $E[W_{PS}] = \frac{\rho E[S]}{1-\rho}$
