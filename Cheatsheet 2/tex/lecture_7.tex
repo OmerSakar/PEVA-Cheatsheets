@@ -1,1 +1,22 @@
-\subsection{Lecture 7}
+\section{Lecture 7}
+\textbf{Open queueing networks:} Infinite source/sink (node 0), arrivals from source,
+departures to sink, number of customers in QN is not constant, stability if number of arrivals equals number of departures.
+
+\textbf{Feed-Forward QNs:} Nodes can be ordered in such a way that whenever customers flow from node $i$ to node $j$, we have $i < j$. Acyclic customer/packet/job flow. FF QN must be open.
+
+TODO Burke's Theorem See slide 15
+
+Consequences of Burke's Theorem: $E[N_{i}] = \frac{\rho_i}{1-\rho_i}$ with $\rho_i = \frac{\lambda_i}{\mu_{i}}$.
+Steady-state probs: $Pr\{\underline{N} = \underline{n}\} = \frac{1}{G}\prod^{M}_{i=1}\rho_{i}^{n_{i}}$ with $G = (\prod^{M}_{i=1} (1-\rho_{i}))^{-1}$.
+
+
+\textbf{Feedback Jackson QNs:} Steady-state probs $Pr\{\underline{N} = \underline{n}\} = \frac{1}{G}\prod^{M}_{i=1}\rho_{i}^{n_{i}}$ with $G = (\prod^{M}_{i=1} (1-\rho_{i}))^{-1}$.
+$E[R]$? Calulate $E[N]$ which is the sum of $E[N_i] = \frac{\rho_i}{1-\rho_i}$ for all queues and use Litlle's Law $E[R] = \frac{E[N]}{\lambda}$
+
+
+%\hrule
+%\settowidth{\MyLen}{\texttt{remaining service time.}}
+%\begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
+%\verb!Utilisation! & $\rho_t = \lambda_t t = \lambda s f_s(s)dt \cdot t$\\
+%\end{tabular}
+%\hrule
