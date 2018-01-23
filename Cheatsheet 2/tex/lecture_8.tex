@@ -1,4 +1,4 @@
-\section{Lecture 8}
+\section{Lecture 8 Closed queueing networks}
 \textbf{Gordon Newell QNs:} always stable.
 
 \hrule
@@ -34,7 +34,7 @@ $E[N_i(k)]$ 		&  $X(k)E[\hat{R}_i(k)]$\\
 \verb!X(K) upperbound! 	&  $X(K) \leq \min\{\frac{K}{E[Z] + D_\Sigma}, \frac{1}{D_+}\}$\\
 \verb!E[R] lower bound! 	&  $E[\hat{R}(K)] \geq \max\{E[Z] + D_\Sigma, KD_+\}$\\
 \verb!! 	&  \\
-\verb!Saturation point! 	&  $K^*  = \frac{D_\Sigma + E[Z]}{D_+}$\\
+\verb!Saturation point! 	&  $K^*  = \frac{D_\Sigma + E[Z]}{D_+}$. The integer part of $K^*$ can be interpreted as the maximum number of customers that could be accommodated without any queueing when all the service times are of deterministic length. Stated differently, if the number of customers is larger than K* we are sure that queueing effects in the network contribute to the response times.\\
 \end{tabular}
 \hrule
 
@@ -53,7 +53,9 @@ $\rho_i(K)$ 	&  $\frac{K}{K+M-1}$\\
 			& $\frac{K}{D_+(K+M-1)} \leq X(K) \leq \frac{K}{D_-(K+M-1)}$\\
 			& $D_-(K+M-1) \leq E[\hat{R}(K)] \leq D_+(K+M-1)$\\
 \verb!Tighter bounds! 	&  \\
-
+\verb!Performance! 	&  best if $D = \bar{D} = \frac{D_\Sigma}{•M}$\\
+\verb!Throughput! 	&  $X(K) \leq \min\{\frac{K}{\bar{D}(K+M-1)}, 
+\frac{1}{D_+}\}$\\
+&  $\max\{\bar{D}(K+M-1), KD_+\} \leq E[\hat{R}(K)] \leq D_+(K-1) + D_\Sigma$\\\\
 \end{tabular}
 \hrule
-\includegraphics[scale=0.2]{images/geen_zin_meer.png}

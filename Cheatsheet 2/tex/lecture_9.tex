@@ -1,5 +1,10 @@
-\section{Lecture 9}
+\section{Lecture 9 Random number generation}
 
+\textbf{Inversion method:} Given some $F_y(y)$, solve $z=F_y(y)$. Here $Z \sim U(0,1)$.
 
-\blindtext
+If density function $f_y(y)$ is given, calculate $F_y(y)$. For example, if $f_y(y) = \frac{2}{3}x^2$ for $-1 \leq x \leq 1$ and zero for everything else, then $F_y(y) = \int^x_{-\infty} f_y(u) du = \int^x_{-1}\frac{2}{3}u^2 du = [\frac{1}{2}x^3]^x_{-1} = \frac{1}{2}x^
+3 + \frac{1}{2}$.
+
+\textbf{Rejection Method:} Given the desity function with finite domain $[a,b]$ and finite image $[0, c]$, you can get approximate random numbers. Generate two uniformly distributed numbers $u_1$ and $u_2$ on $[0,1]$. Derive random numbers $x = a + (b-a)u_1$ and $y = cu_2$. If $(y < f_X(x))$, then accept $x$, else generate new $u_1$ and $u_2$. This is fairly efficient when area under $f_X(x)$ is close to $c(b-a)$.\\~\\
+
 \blindtext
