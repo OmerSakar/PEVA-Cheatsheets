@@ -4,7 +4,7 @@ departures to sink, number of customers in QN is not constant, stability if numb
 
 \textbf{Feed-Forward QNs:} Nodes can be ordered in such a way that whenever customers flow from node $i$ to node $j$, we have $i < j$. Acyclic customer/packet/job flow. FF QN must be open.
 
-TODO Burke's Theorem See slide 15
+\textbf{Burke's Theorem:} The departure process from a stable single server M$|$M$|$1 queue with arrival rate $\lambda$ and service rate $\mu$ is a Poisson process with rate $\lambda$.
 
 Consequences of Burke's Theorem: $E[N_{i}] = \frac{\rho_i}{1-\rho_i}$ with $\rho_i = \frac{\lambda_i}{\mu_{i}}$.
 Steady-state probs: $Pr\{\underline{N} = \underline{n}\} = \frac{1}{G}\prod^{M}_{i=1}\rho_{i}^{n_{i}}$ with $G = (\prod^{M}_{i=1} (1-\rho_{i}))^{-1}$.

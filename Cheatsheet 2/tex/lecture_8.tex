@@ -21,11 +21,11 @@ $E[\hat{R}_i(k)]$ 	&  $(E[N_i(k-1)] + 1)D_i$\\
 $E[\hat{R}(k)]$ 	&  $\sum E[\hat{R}_i(K)]$\\
 $X(K)$ 				&  $\frac{K}{E[\hat{R}(k)]}$\\
 $E[N_i(k)]$ 		&  $X(k)E[\hat{R}_i(k)]$\\
-\verb!For IS node!  &  $E[R_i](K) = E[S_i]$ and $E[\hat{R}_i](K) = D_i$
+\verb!For IS node!  &  $E[R_i(K)] = E[S_i]$ and $E[\hat{R}_i(K)] = D_i$
 \end{tabular}
 \newline
 \hrule
-\includegraphics[scale=0.2]{images/MVA.png}
+\includegraphics[scale=0.25]{images/MVA.png}
 
 \textbf{Asumptotic bounds:}
 \hrule
@@ -41,7 +41,7 @@ $E[N_i(k)]$ 		&  $X(k)E[\hat{R}_i(k)]$\\
 \textbf{Bard-Schweiter Approximation:}
 MVA with $E[\hat{R}_i(K)] \approx (\frac{K-1}{K} E[N_i(K)] + 1) D_i$ and as a first guess $E[N_i](k) = \frac{K}{M}$.
 
-\textbf{Balanced Queueing Networks:} Assume all station ahve the same service demands and $E[N_i(K)] = \frac{K}{M}$.
+\textbf{Balanced Queueing Networks:} Assume all station have the same service demands and $E[N_i(K)] = \frac{K}{M}$.
 \hrule
 \settowidth{\MyLen}{\texttt{Saturation point.}}
 \begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
